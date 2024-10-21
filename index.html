@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando...</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe0e9;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff69b4;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .loader {
+            border: 10px solid #f3f3f3;
+            border-top: 10px solid #ff69b4;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Espacio entre las imágenes */
+            margin-top: 20px;
+        }
+
+        .image-box {
+            width: 300px; /* Ancho de las imágenes */
+            height: 300px; /* Alto de las imágenes */
+            overflow: hidden;
+            border-radius: 15px; /* Esquinas redondeadas */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra */
+            transition: transform 0.3s; /* Transición suave al hacer hover */
+        }
+
+        .image-box:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+        }
+
+        .image-box img {
+            width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+            height: 100%; /* Asegura que la imagen se ajuste al contenedor */
+            object-fit: cover; /* Mantiene la relación de aspecto de la imagen */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Para la cumpleañera más lindota🎂...</h1>
+        <p> Un puqueño detalle </p>
+        <div class="loader"></div>
+        
+        <!-- Contenedor de imágenes -->
+        <div class="image-container">
+            <div class="image-box">
+                <img src="/img/Yari.jpg" alt="Descripción de la imagen 1">
+            </div>
+            <div class="image-box">
+                <img src="/img/cuento.jpg" alt="Descripción de la imagen 2">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Redirigir a la página de cumpleaños después de 5 segundos
+        setTimeout(() => {
+            window.location.href = 'carta.html'; // Asegúrate de que el nombre del archivo de la carta sea correcto
+        }, 5000);
+    </script>
+</body>
+</html>
+

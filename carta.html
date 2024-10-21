@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Cumpleaños</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="container2">
+        <div class="heart-background space-1"></div>
+        <div class="heart-background space-2"></div>
+        <div class="heart-background space-3"></div>
+    </div>
+
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Hola Yari!!!</strong>
+                        <p>
+                            ¡Feliz cumpleaños! 🎉🎂<br>
+                           <!--  Quería aprovechar este día tan especial para decirte lo increíble que eres.<br> -->
+                            Espero que te la pases de lo mejor en este día, tu día,
+                            que sigas cumpliendo muchos pero muchos años más. <br><br>
+                            No sé a que hora estes leyendo esto, pero espero que te hayan gustado
+                            las flores, las elegí pensando en ti, en lo bonita que eres, y 
+                            estas flores son igual de bonitas que tu. <br> 
+                            Disfruta tu día, niña bonita 🌹☀️.
+                            Que tengas un día lleno de alegría, amor y muchísimas sorpresas. 🎂
+                        </p> <br>
+                        <p>Con mucho cariño, <strong>Mario ❤️</strong></p>
+                        <br><br><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+
+        const generateHeartLayer = (selector, totalHearts, duration) => {
+            const layer = [];
+            for (let i = 0; i < totalHearts; i++) {
+                const x = Math.floor(Math.random() * 100);
+                const y = Math.floor(Math.random() * 100);
+                layer.push(`${x}vw ${y}vh 0 var(--heart-color), ${x}vw ${y + 100}vh 0 var(--heart-color)`);
+            }
+            const container = document.querySelector(selector);
+            container.style.setProperty("--duration", duration);
+            container.style.setProperty("--heart-layer", layer.join(","));
+        }
+
+        generateHeartLayer(".space-1", 200, "25s");
+        generateHeartLayer(".space-2", 150, "20s");
+        generateHeartLayer(".space-3", 100, "15s");
+    </script>
+</body>
+
+</html>
+
